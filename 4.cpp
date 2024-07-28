@@ -1,13 +1,39 @@
-#include <cmath>
-#include <iomanip>
-#include <iostream>
-using namespace std;
-int main()
-{
-    double val1 = 22;
-    double val2 = 12;
-    cout << fixed << setprecision(12) << sqrt(val1) << endl;
-    cout << fixed << setprecision(12) << sqrt(val2) << endl;
-    return (0);
-}
-
+#include<iostream> 
+#include<conio.h> 
+class ABC; 
+class XYZ 
+{ 
+int x; 
+public: 
+void setvalue(int i) 
+{ 
+x=i; 
+} 
+friend void max(XYZ, ABC); 
+}; 
+class ABC 
+{ 
+int a; 
+public: 
+void setvalue(int i) 
+{ 
+a=i; 
+} 
+friend void max(XYZ, ABC); 
+}; 
+void max (XYZ m, ABC n) 
+{ 
+if(m.x>=n.a) 
+std::cout<<m.x; 
+else 
+std::cout<<n.a; 
+} 
+int main() 
+{ 
+ABC abc; 
+abc.setvalue(10); 
+XYZ xyz; 
+xyz.setvalue(20); 
+max(xyz,abc); 
+return 0; 
+} 
